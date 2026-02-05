@@ -49,7 +49,7 @@ const CartModal = () => {
                     onChange={() => {}}
                />
                <div className="modal" role="dialog">
-                    <div className="modal-box w-full max-w-2xl">
+                    <div className="modal-box bg-gray-50 w-full max-w-2xl">
                          {/* Close button */}
                          <button
                               onClick={closeCartModal}
@@ -170,7 +170,7 @@ const CartModal = () => {
                               {cart.length > 0 && (
                                    <button
                                         onClick={handleWhatsAppOrder}
-                                        className="btn btn-success text-white"
+                                        className="btn btn-success bg-green-400 text-white"
                                    >
                                         Send to WhatsApp
                                    </button>

@@ -180,10 +180,10 @@ const AdminProducts = () => {
      };
 
      return (
-          <div className="md:p-8 bg-zinc-50 dark:bg-zinc-950 min-h-screen">
+          <div className="md:p-8 bg-zinc-50 min-h-screen">
                <div className="max-w-6xl mx-auto">
                     <header className="flex justify-between items-center mb-8">
-                         <h1 className="text-3xl font-black text-zinc-900 dark:text-white">
+                         <h1 className="text-3xl font-black text-zinc-900">
                               Inventory
                          </h1>
                          <div className="flex items-center gap-3">
@@ -193,7 +193,7 @@ const AdminProducts = () => {
                                         setEditingId(null);
                                         setIsModalOpen(true);
                                    }}
-                                   className="bg-zinc-900 dark:bg-white dark:text-black text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:scale-105 transition-transform"
+                                   className="bg-zinc-900  text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:scale-105 transition-transform"
                               >
                                    <Plus size={20} /> Add Product
                               </button>
@@ -213,8 +213,8 @@ const AdminProducts = () => {
                     {/* Modal Form */}
                     {isModalOpen && (
                          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
-                              <div className="bg-white dark:bg-zinc-900 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl no-scrollbar">
-                                   <div className="sticky top-0 bg-white dark:bg-zinc-900 p-6 border-b border-zinc-100 dark:border-zinc-800 flex justify-between items-center">
+                              <div className="bg-white  w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl no-scrollbar">
+                                   <div className="sticky top-0 bg-white  p-6 border-b border-zinc-100  flex justify-between items-center">
                                         <h2 className="text-xl font-bold">
                                              {editingId
                                                   ? "Edit Product"
@@ -224,7 +224,7 @@ const AdminProducts = () => {
                                              onClick={() =>
                                                   setIsModalOpen(false)
                                              }
-                                             className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full"
+                                             className="p-2 hover:bg-zinc-100 rounded-full"
                                         >
                                              <X />
                                         </button>
@@ -241,7 +241,7 @@ const AdminProducts = () => {
                                              </label>
                                              <input
                                                   type="text"
-                                                  className="w-full p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent"
+                                                  className="w-full p-3 rounded-xl border border-zinc-200 bg-transparent"
                                                   value={formData.name_en}
                                                   onChange={(e) =>
                                                        setFormData({
@@ -262,7 +262,7 @@ const AdminProducts = () => {
                                              </label>
                                              <input
                                                   type="text"
-                                                  className="w-full p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent"
+                                                  className="w-full p-3 rounded-xl border border-zinc-200 bg-transparent"
                                                   value={formData.name_ar}
                                                   onChange={(e) =>
                                                        setFormData({
@@ -282,7 +282,7 @@ const AdminProducts = () => {
                                              </label>
                                              <input
                                                   type="text"
-                                                  className="w-full p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent"
+                                                  className="w-full p-3 rounded-xl border border-zinc-200 bg-transparent"
                                                   value={formData.category_en}
                                                   onChange={(e) =>
                                                        setFormData({
@@ -302,7 +302,7 @@ const AdminProducts = () => {
                                              </label>
                                              <input
                                                   type="text"
-                                                  className="w-full p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent"
+                                                  className="w-full p-3 rounded-xl border border-zinc-200 bg-transparent"
                                                   value={formData.category_ar}
                                                   onChange={(e) =>
                                                        setFormData({
@@ -320,7 +320,7 @@ const AdminProducts = () => {
                                                   Description (EN)
                                              </label>
                                              <textarea
-                                                  className="w-full p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent h-24"
+                                                  className="w-full p-3 rounded-xl border border-zinc-200 bg-transparent h-24"
                                                   value={
                                                        formData.description_en
                                                   }
@@ -338,7 +338,7 @@ const AdminProducts = () => {
                                                   Description (AR)
                                              </label>
                                              <textarea
-                                                  className="w-full p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent h-24"
+                                                  className="w-full p-3 rounded-xl border border-zinc-200 bg-transparent h-24"
                                                   value={
                                                        formData.description_ar
                                                   }
@@ -358,7 +358,7 @@ const AdminProducts = () => {
                                              </label>
                                              <input
                                                   type="number"
-                                                  className="w-full p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent"
+                                                  className="w-full p-3 rounded-xl border border-zinc-200 bg-transparent"
                                                   value={formData.price}
                                                   onChange={(e) =>
                                                        setFormData({
@@ -375,7 +375,7 @@ const AdminProducts = () => {
                                              </label>
                                              <input
                                                   type="number"
-                                                  className="w-full p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent"
+                                                  className="w-full p-3 rounded-xl border border-zinc-200 bg-transparent"
                                                   value={formData.offerPrice}
                                                   onChange={(e) =>
                                                        setFormData({
@@ -388,7 +388,7 @@ const AdminProducts = () => {
                                         </div>
 
                                         {/* Toggles */}
-                                        <div className="flex gap-6 items-center md:col-span-2 bg-zinc-50 dark:bg-zinc-800/50 p-4 rounded-2xl">
+                                        <div className="flex gap-6 items-center md:col-span-2 bg-zinc-50 p-4 rounded-2xl">
                                              <label className="flex items-center gap-2 cursor-pointer">
                                                   <input
                                                        type="checkbox"
@@ -439,7 +439,7 @@ const AdminProducts = () => {
                                              <div className="flex gap-2">
                                                   <input
                                                        type="text"
-                                                       className="grow p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent"
+                                                       className="grow p-3 rounded-xl border border-zinc-200 bg-transparent"
                                                        placeholder="https://..."
                                                        value={
                                                             formData.images[0]
@@ -460,7 +460,7 @@ const AdminProducts = () => {
                                         <button
                                              disabled={loading}
                                              type="submit"
-                                             className="md:col-span-2 bg-zinc-900 dark:bg-white dark:text-black text-white p-4 rounded-2xl font-black text-lg hover:opacity-90 disabled:opacity-50"
+                                             className="md:col-span-2 bg-zinc-900 text-white p-4 rounded-2xl font-black text-lg hover:opacity-90 disabled:opacity-50"
                                         >
                                              {loading
                                                   ? "Processing..."

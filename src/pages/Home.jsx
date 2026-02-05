@@ -17,7 +17,7 @@ const Home = () => {
      const [error, setError] = useState(null);
      const { getTotalItems, openCartModal } = useCart();
 
-     const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
+     const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
 
      useEffect(() => {
           const controller = new AbortController();
@@ -150,9 +150,9 @@ const Home = () => {
                                         </h2>
                                    </div>
 
-                                   <div className="flex flex-col font-primary font-bold justify-end">
+                                   <div className="flex flex-col  font-primary font-bold justify-end">
                                         <button
-                                             className="btn rounded-2xl"
+                                             className="btn rounded-2xl bg-gray-100"
                                              onClick={() => {
                                                   language == "en"
                                                        ? setLanguage("ar")

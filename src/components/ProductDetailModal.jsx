@@ -25,7 +25,7 @@ const ProductDetailModal = ({ product, isOpen, onClose }) => {
                     onChange={() => {}}
                />
                <div className="modal" role="dialog">
-                    <div className="modal-box w-full max-w-2xl">
+                    <div className="modal-box w-full bg-gray-50 max-w-2xl">
                          {/* Close button */}
                          <button
                               onClick={onClose}
