@@ -4,10 +4,11 @@ import Carousel from "../components/Carousel";
 import ProductsContainer from "../components/ProductsContainer";
 import CardsSection from "../components/Sections/CardsSection";
 import { CiGlobe } from "react-icons/ci";
-import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
-import { MdLocationOn } from "react-icons/md";
 import { FiShoppingCart } from "react-icons/fi";
 import { useCart } from "../contexts/CartContext";
+import SocialBtns from "../components/ui/SocialBtns";
+import Footer from "../components/Footer";
+import Loading from "../components/ui/Loading";
 
 const Home = () => {
      const [language, setLanguage] = useState("en"); // "en" | "ar"
@@ -101,52 +102,19 @@ const Home = () => {
                          alt="cover"
                     />
                     <div className=" resturant-details flex flex-col gap-16 relative m-auto max-w-3xl">
-                         <div className="social flex justify-end gap-4">
-                              <a
-                                   href="https://www.facebook.com"
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   className="rounded-md p-2 bg-blue-600 hover:bg-blue-700 transition-colors flex items-center justify-center text-xl text-white"
-                              >
-                                   <FaFacebook />
-                              </a>
-                              <a
-                                   href="https://www.instagram.com"
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   className="rounded-md p-2 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 transition-colors flex items-center justify-center text-xl text-white"
-                              >
-                                   <FaInstagram />
-                              </a>
-                              <a
-                                   href="https://wa.me/1234567890"
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   className="rounded-md p-2 bg-green-500 hover:bg-green-600 transition-colors flex items-center justify-center text-xl text-white"
-                              >
-                                   <FaWhatsapp />
-                              </a>
-                              <a
-                                   href="https://maps.google.com"
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   className="rounded-md p-2 bg-red-500 hover:bg-red-600 transition-colors flex items-center justify-center text-xl text-white"
-                              >
-                                   <MdLocationOn />
-                              </a>
-                         </div>
+                         <SocialBtns />
                          <div className="container flex gap-3">
                               <div className="flex w-full justify-between">
                                    <div className="flex flex-col  gap-2">
                                         <div className="logo rounded-full aspect-square w-20 md:w-28 border-white border-4 overflow-hidden">
                                              <img
-                                                  src="https://i.postimg.cc/Jnkq7DBV/larmaz.png"
+                                                  src="logo-larmaze.png"
                                                   className="object-cover object-center"
                                                   alt=""
                                              />
                                         </div>
                                         <h2 className="store-name font-secondary font-semibold text-md md:text-2xl text-white">
-                                             Lamarz Cafe
+                                             Lamarz Restaurant & Cafe
                                         </h2>
                                    </div>
 
@@ -175,7 +143,11 @@ const Home = () => {
                     <div>
                          <Carousel />
                     </div>
-
+                    
+{
+     loading ? <Loading/> :
+                    (
+                         <>
                     <CardsSection
                          title={
                               language === "en"
@@ -192,7 +164,7 @@ const Home = () => {
                          }
                          cards={products.filter((p) => p.isPopular)}
                     />
-
+                    
                     {/* Category sections */}
                     {categoriesList &&
                          categoriesList.length > 0 &&
@@ -222,7 +194,10 @@ const Home = () => {
 
                     {/* Fallback main products */}
                     <ProductsContainer products={products} />
+                    </>)
+}
                </div>
+               <Footer />
           </div>
      );
 };

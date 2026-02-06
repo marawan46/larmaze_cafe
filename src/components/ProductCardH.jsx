@@ -1,6 +1,5 @@
 import React from "react";
 import PopularTag from "./ui/PopularTag";
-import AddToCart from "./ui/AddToCart";
 import OfferTag from "./ui/OfferTag";
 import { useCurrency } from "../contexts/CurrencyContext";
 

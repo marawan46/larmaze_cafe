@@ -5,7 +5,7 @@ import { useEffect, useState, useCallback } from "react";
 function fetchMockBanners() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (Math.random() < 0.2) {
+      if (false) {
         reject(new Error("Failed to load banners"));
       } else {
         resolve([

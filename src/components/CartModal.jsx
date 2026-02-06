@@ -68,7 +68,7 @@ const CartModal = () => {
                               <div className="flex flex-col gap-4 max-h-96 overflow-y-auto mb-6">
                                    {cart.map((item) => (
                                         <div
-                                             key={item.id}
+                                             key={item._id}
                                              className="flex items-center gap-4 p-3 bg-gray-100 rounded-lg"
                                         >
                                              {/* Image */}
@@ -102,7 +102,7 @@ const CartModal = () => {
                                                   <button
                                                        onClick={() =>
                                                             updateQuantity(
-                                                                 item.id,
+                                                                 item._id,
                                                                  item.quantity -
                                                                       1,
                                                             )
@@ -117,7 +117,7 @@ const CartModal = () => {
                                                   <button
                                                        onClick={() =>
                                                             updateQuantity(
-                                                                 item.id,
+                                                                 item._id,
                                                                  item.quantity +
                                                                       1,
                                                             )
@@ -131,7 +131,7 @@ const CartModal = () => {
                                              {/* Delete Button */}
                                              <button
                                                   onClick={() =>
-                                                       removeFromCart(item.id)
+                                                       removeFromCart(item._id)
                                                   }
                                                   className="btn btn-sm btn-error btn-ghost"
                                              >

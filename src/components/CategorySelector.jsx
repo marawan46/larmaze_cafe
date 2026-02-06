@@ -59,7 +59,7 @@ export default function CategorySelector({ categories: categoriesProp }) {
 
      return (
           <div className="sticky top-0 z-50 -mt-6 px-3 mb-3 rounded-md max-w-3xl mx-auto bg-[#eaeaea] shadow-sm">
-               <div className="flex items-center gap-3">
+               <div className="flex items-center min-h-18 gap-3">
                     <div className="flex overflow-scroll no-scrollbar font-secondary font-bold text-[1.1rem]">
                          {categories.map((category, index) => {
                               const isActive = selected === category.id;
