@@ -12,7 +12,7 @@ const AdminProducts = () => {
      const { token, logout } = useAuth();
      const navigate = useNavigate();
 
-     const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
+     const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
 
      // الحالة الابتدائية بناءً على الكائن الخاص بك
      const initialState = {
@@ -128,7 +128,7 @@ const AdminProducts = () => {
      const fetchProducts = async () => {
           setLoading(true);
           try {
-               const res = await fetch(`${apiUrl}/products/all`, {
+               const res = await fetch(`${apiUrl}/products`, {
                     headers: {
                          "Content-Type": "application/json",
                          ...(token ? { Authorization: `Bearer ${token}` } : {}),

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-<footer className="footer footer-horizontal footer-center bg-primary text-primary-content p-10">
+<footer className="footer footer-horizontal footer-center bg-primary text-white p-10">
   <aside>
     <div className="logo rounded-full aspect-square w-20 border-white border-4 overflow-hidden">
             <img
@@ -16,6 +16,8 @@ const Footer = () => {
       <br />
       Serving Happiness Daily
     </p>
+    <p>20 Al Abnous St - Al Jimi - Al Ameriya</p>
+    <p>+971 3 7667663</p>
     <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
   </aside>
   <nav>
