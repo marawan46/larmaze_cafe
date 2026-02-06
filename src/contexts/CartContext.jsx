@@ -15,14 +15,20 @@ export const CartProvider = ({ children }) => {
      const [isCartModalOpen, setIsCartModalOpen] = useState(false);
 
      const addToCart = (product, quantity = 1) => {
+          console.log("Adding to cart:", {
+               productId: product._id,
+               productTitle: product.title,
+               quantity,
+          });
           setCart((prevCart) => {
                const existingItem = prevCart.find(
-                    (item) => item.id === product.id,
+                    (item) => item._id === product._id,
                );
+               console.log("Existing item found:", existingItem ? "YES" : "NO");
 
                if (existingItem) {
                     return prevCart.map((item) =>
-                         item.id === product.id
+                         item._id === product._id
                               ? { ...item, quantity: item.quantity + quantity }
                               : item,
                     );
@@ -34,7 +40,7 @@ export const CartProvider = ({ children }) => {
 
      const removeFromCart = (productId) => {
           setCart((prevCart) =>
-               prevCart.filter((item) => item.id !== productId),
+               prevCart.filter((item) => item._id !== productId),
           );
      };
 
@@ -44,7 +50,7 @@ export const CartProvider = ({ children }) => {
           } else {
                setCart((prevCart) =>
                     prevCart.map((item) =>
-                         item.id === productId ? { ...item, quantity } : item,
+                         item._id === productId ? { ...item, quantity } : item,
                     ),
                );
           }

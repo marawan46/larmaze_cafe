@@ -12,6 +12,7 @@ const ProductDetailModal = ({ product, isOpen, onClose }) => {
 
      const handleAddToCart = () => {
           addToCart(product, 1);
+          onClose()
           openCartModal();
      };
 
@@ -79,16 +80,16 @@ const ProductDetailModal = ({ product, isOpen, onClose }) => {
 
                                    {/* Price */}
                                    <div className="flex items-center gap-3">
-                                        {product.offerPrice && (
+                                        {product.offerPrice != 0 ? (
                                              <span className="text-lg font-semibold line-through text-gray-400">
-                                                  {product.offerPrice}
+                                                  {product.offerPrice || ""}
                                                   <span className="text-sm">
                                                        {symbol}
                                                   </span>
                                              </span>
-                                        )}
+                                        ) : ""}
                                         <span className="text-3xl font-extrabold font-primary text-gray-900">
-                                             {product.price}
+                                             {product.price || ""}
                                              <span className="text-lg">
                                                   {symbol}
                                              </span>
@@ -96,7 +97,7 @@ const ProductDetailModal = ({ product, isOpen, onClose }) => {
                                    </div>
 
                                    {/* Description */}
-                                   <div className="divider my-2"></div>
+                                   
                                    <div>
                                         <p className="font-semibold text-gray-900 mb-2">
                                              Description
@@ -129,7 +130,7 @@ const ProductDetailModal = ({ product, isOpen, onClose }) => {
                                         </button>
                                         <button
                                              onClick={handleAddToCart}
-                                             className="btn btn-primary"
+                                             className="btn border-0 text-white bg-green-500"
                                         >
                                              Add to Cart
                                         </button>
